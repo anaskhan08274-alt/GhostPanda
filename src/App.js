@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import  Navbar  from './Component/Navbar';
@@ -18,7 +17,6 @@ function App() {
         <Route path="About" element={<About/>} />
         <Route path="Navbar" element={<Navbar/>} />
         <Route path="upload" element={<UploadResume/>} />
-        <img src={logo} alt="logo" />
       </Routes>
     </div>
   </>
