@@ -18,6 +18,7 @@ function App() {
         <Route path="About" element={<About/>} />
         <Route path="Navbar" element={<Navbar/>} />
         <Route path="upload" element={<UploadResume/>} />
+        <img src={logo} alt="logo" />
       </Routes>
     </div>
   </>
