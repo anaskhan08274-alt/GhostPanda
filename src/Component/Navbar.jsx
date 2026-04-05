@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="bg-white shadow sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -10,35 +13,20 @@ const Navbar = () => {
           GhostPanda 🐼
         </h1>
 
-        {/* Links */}
-        <div className="flex items-center space-x-6">
-
-          <Link
-            to="/"
-            className="relative group text-gray-700 font-medium"
-          >
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Link to="/" className="text-gray-700 font-medium hover:text-black">
             Home
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all group-hover:w-full"></span>
           </Link>
 
-          <Link
-            to="/about"
-            className="relative group text-gray-700 font-medium"
-          >
+          <Link to="/about" className="text-gray-700 font-medium hover:text-black">
             About
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all group-hover:w-full"></span>
           </Link>
 
-          {/* Dashboard */}
-          <Link
-            to="/dashboard"
-            className="relative group text-gray-700 font-medium"
-          >
+          <Link to="/dashboard" className="text-gray-700 font-medium hover:text-black">
             Dashboard
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all group-hover:w-full"></span>
           </Link>
 
-          {/* Login Button */}
           <Link
             to="/login"
             className="border border-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition"
@@ -46,17 +34,38 @@ const Navbar = () => {
             Login
           </Link>
 
-          {/* Upload Button */}
           <Link
             to="/upload"
             className="bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition"
           >
             Upload Resume
           </Link>
-
         </div>
 
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white shadow px-6 py-4 space-y-4">
+          <Link to="/" className="block">Home</Link>
+          <Link to="/about" className="block">About</Link>
+          <Link to="/dashboard" className="block">Dashboard</Link>
+          <Link to="/login" className="block">Login</Link>
+          <Link
+            to="/upload"
+            className="block bg-black text-white px-4 py-2 rounded-lg text-center"
+          >
+            Upload Resume
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };
