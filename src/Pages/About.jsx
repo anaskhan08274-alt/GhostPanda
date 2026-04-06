@@ -77,21 +77,30 @@ const About = () => {
 
           <div className="grid md:grid-cols-3 gap-6 text-center">
 
-            <div className="p-6 border rounded-xl hover:shadow-lg transition">
+            <div className="group bg-purple-500 to-pink-500 p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-purple-500 to-pink-500 hover:to-indigo-400
+           hover:shadow-2xl hover:-translate-y-5 hover:scale-105
+           transition duration-300 cursor-pointer">
               <h3 className="font-semibold mb-2">AI Resume Analysis</h3>
               <p className="text-gray-600 text-sm">
                 Analyze resumes using AI and improve quality.
               </p>
             </div>
 
-            <div className="p-6 border rounded-xl hover:shadow-lg transition">
+            <div className="bg-yellow-500 to-pink-500 p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-yellow-500 to-pink-500 hover:to-indigo-400
+           hover:shadow-2xl hover:-translate-y-5 hover:scale-105
+           transition duration-300 cursor-pointer">
               <h3 className="font-semibold mb-2">ATS Score Checker</h3>
               <p className="text-gray-600 text-sm">
                 Check ATS compatibility and resume score.
               </p>
             </div>
 
-            <div className="p-6 border rounded-xl hover:shadow-lg transition">
+            <div className="bg-purple-500 to-pink-500 p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-purple-500 to-pink-500 hover:to-indigo-400
+           hover:shadow-2xl hover:-translate-y-5 hover:scale-105
+           transition duration-300 cursor-pointer">
               <h3 className="font-semibold mb-2">Resume Builder</h3>
               <p className="text-gray-600 text-sm">
                 Build professional resumes easily.

@@ -27,6 +27,14 @@ const Navbar = () => {
             Dashboard
           </Link>
 
+          <Link to="/history" className="text-gray-700 font-medium hover:text-black">
+            Resume History
+          </Link>
+
+          <Link to="/setting" className="text-gray-700 font-medium hover:text-black">
+            Setting
+          </Link>
+
           <Link
             to="/login"
             className="border border-black px-4 py-2 rounded-lg hover:bg-black hover:text-white transition"
@@ -44,7 +52,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -57,7 +65,10 @@ const Navbar = () => {
           <Link to="/" className="block">Home</Link>
           <Link to="/about" className="block">About</Link>
           <Link to="/dashboard" className="block">Dashboard</Link>
+          <Link to="/history" className="block">Resume History</Link>
+          <Link to="/setting" className="block">Setting</Link>
           <Link to="/login" className="block">Login</Link>
+
           <Link
             to="/upload"
             className="block bg-black text-white px-4 py-2 rounded-lg text-center"

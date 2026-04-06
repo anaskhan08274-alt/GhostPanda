@@ -17,16 +17,16 @@ const Dashboard = () => {
             Upload Resume
           </Link>
 
-          <Link to="#" className="block text-gray-400">
+          <Link to="/History" className="block hover:text-gray-300">
             Resume History
           </Link>
 
-          <Link to="#" className="block text-gray-400">
+          <Link to="/ai-tools" className="block hover:text-gray-300">
             AI Tools
           </Link>
 
-          <Link to="#" className="block text-gray-400">
-            Settings
+          <Link to="/Setting" className="block hover:text-gray-300">
+            Setting
           </Link>
         </nav>
       </div>
@@ -47,25 +47,36 @@ const Dashboard = () => {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid md:grid-cols-3 gap-6">
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-gray-500">Resumes Analyzed</h3>
-            <p className="text-3xl font-bold mt-2">12</p>
-          </div>
+  <div className="bg-white p-6 rounded-xl shadow
+                  hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-500
+                  hover:text-white
+                  hover:shadow-2xl hover:-translate-y-2 hover:scale-105
+                  transition duration-300">
+    <h3>Total Resumes</h3>
+    <p className="text-3xl font-bold">12</p>
+  </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-gray-500">Average Score</h3>
-            <p className="text-3xl font-bold mt-2">78</p>
-          </div>
+  <div className="bg-white p-6 rounded-xl shadow
+                  hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-500
+                  hover:text-white
+                  hover:shadow-2xl hover:-translate-y-2 hover:scale-105
+                  transition duration-300">
+    <h3>ATS Score</h3>
+    <p className="text-3xl font-bold">78%</p>
+  </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-gray-500">Job Matches</h3>
-            <p className="text-3xl font-bold mt-2">5</p>
-          </div>
+  <div className="bg-white p-6 rounded-xl shadow
+                  hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500
+                  hover:text-white
+                  hover:shadow-2xl hover:-translate-y-2 hover:scale-105
+                  transition duration-300">
+    <h3>Job Matches</h3>
+    <p className="text-3xl font-bold">5</p>
+  </div>
 
-        </div>
-
+</div>
         {/* Recent Activity */}
         <div className="bg-white p-6 rounded-xl shadow mb-10">
           <h3 className="text-xl font-semibold mb-4">
@@ -106,38 +117,47 @@ const Dashboard = () => {
         {/* Coming Soon Tools */}
         <div className="grid md:grid-cols-3 gap-6">
 
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="group bg-white p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-blue-500 hover:to-indigo-50
+           hover:shadow-2xl hover:-translate-y-9 hover:scale-105
+           transition duration-300 cursor-pointer">
             <h3 className="font-semibold mb-2">
               Resume Builder
             </h3>
             <p className="text-gray-500 text-sm">
               Create professional resumes easily.
             </p>
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-gray-100">
               Coming Soon
             </span>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="group bg-white p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-pink-500 hover:to-indigo-50
+           hover:shadow-2xl hover:-translate-y-9 hover:scale-105
+           transition duration-300 cursor-pointer">
             <h3 className="font-semibold mb-2">
               Job Matcher
             </h3>
             <p className="text-gray-500 text-sm">
               Match resume with job descriptions.
             </p>
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-gray-100">
               Coming Soon
             </span>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="group bg-white p-6 rounded-xl shadow
+           hover:bg-gradient-to-r hover:from-green-500 hover:to-indigo-50
+           hover:shadow-2xl hover:-translate-y-9 hover:scale-105
+           transition duration-300 cursor-pointer">
             <h3 className="font-semibold mb-2">
               Cover Letter Generator
             </h3>
             <p className="text-gray-500 text-sm">
               Generate AI cover letters.
             </p>
-            <span className="text-xs text-gray-400">
+            <span className="text-xs text-gray-100">
               Coming Soon
             </span>
           </div>
