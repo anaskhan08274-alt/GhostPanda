@@ -65,7 +65,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {[
-              { title: "Total Resumes", value: "12", color: "blue" },
+              { title: "Total Resumes", value: "12", color: "red" },
               { title: "ATS Score", value: "78%", color: "green" },
               { title: "Job Matches", value: "5", color: "purple" },
             ].map((card, i) => (
