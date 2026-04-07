@@ -13,6 +13,11 @@ import History from "./Pages/History";
 import Setting from "./Pages/Setting";
 import Dashboard from "./Pages/Dashboard";
 import AITools from './Pages/AITools';
+import ResumeBuilder from "./Pages/ResumeBuilder";
+import CoverLetter from "./Pages/CoverLetter";
+import JobMatch from "./Pages/JobMatch";
+import InterviewAI from './Pages/InterviewAI';
+import SkillGap from './Pages/SkillGap';
 
 
 function App() {
@@ -33,6 +38,11 @@ function App() {
         <Route path="Setting" element={<Setting/>} />
         <Route path="ai-tools" element={<AITools/>} />
         <Route path="Dashboard" element={<Dashboard/>} />
+        <Route path="/resume-builder" element={<ResumeBuilder />} />
+        <Route path="/cover-letter" element={<CoverLetter />} />
+        <Route path="/job-match" element={<JobMatch />} />
+        <Route path="/interview" element={<InterviewAI />} />
+        <Route path="/skillgap" element={<SkillGap />} />
       </Routes>
       <Footer/>
     </div>

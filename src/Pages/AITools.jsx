@@ -12,31 +12,31 @@ const AITools = () => {
       title: "Resume Builder",
       desc: "Create professional resumes with AI",
       color: "from-purple-500 to-pink-500",
-      link: "#"
+      link: "/resume-builder"
     },
     {
       title: "Cover Letter Generator",
       desc: "Generate AI cover letters instantly",
       color: "from-green-500 to-emerald-500",
-      link: "#"
+      link: "/cover-letter"
     },
     {
       title: "Job Match AI",
       desc: "Match resume with job descriptions",
       color: "from-orange-500 to-red-500",
-      link: "#"
+      link: "/job-match"
     },
     {
       title: "Interview Questions AI",
       desc: "Get interview questions based on resume",
       color: "from-cyan-500 to-blue-500",
-      link: "#"
+      link: "/interview"
     },
     {
       title: "Skill Gap Analyzer",
       desc: "Find missing skills for your career",
       color: "from-yellow-500 to-orange-500",
-      link: "#"
+      link: "/skillgap"
     }
   ];
 
