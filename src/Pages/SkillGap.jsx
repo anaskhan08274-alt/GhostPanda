@@ -33,7 +33,7 @@ const CareerPath = () => {
       {/* 🔥 HEADER */}
       <div className="text-center mb-12">
         <h1 className="text-5xl font-extrabold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-          Career Path Predictor 🚀
+        Skill Gap Analyzer 🚀
         </h1>
         <p className="text-gray-600 text-lg">
           Discover your best career path based on your skills
