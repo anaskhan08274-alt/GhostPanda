@@ -45,7 +45,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="text-center text-gray-500 mt-8">
-        © 2026 GhostPanda. All rights reserved.
+        © 2026 GhostPanda. Build by Mohd Anas.
       </div>
     </footer>
   );

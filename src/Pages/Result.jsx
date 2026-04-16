@@ -1,120 +1,132 @@
 import { Link } from "react-router-dom";
 
 const Result = () => {
-
-  // 🔹 Dummy Data (later API se aayega)
   const score = 78;
 
   const skills = ["React", "JavaScript", "HTML", "CSS"];
   const missingSkills = ["Node.js", "MongoDB", "TypeScript"];
 
   const suggestions = [
-    "Add more action verbs like 'developed', 'built', 'optimized'",
-    "Include measurable achievements",
+    "Add action verbs like 'developed', 'built', 'optimized'",
+    "Include measurable achievements (e.g. 30% growth)",
     "Improve keyword optimization for ATS",
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 md:p-10">
+    <div className="relative min-h-screen bg-[#0f172a] text-white p-6 md:p-10 overflow-hidden">
 
-      {/* 🔹 Title */}
-      <h1 className="text-3xl md:text-4xl font-bold mb-8">
-        Resume Analysis Result 📊
-      </h1>
+      {/* 🔥 Background Glow */}
+      <div className="absolute w-[400px] h-[400px] bg-purple-500/20 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
+      <div className="absolute w-[300px] h-[300px] bg-pink-500/20 blur-[120px] rounded-full bottom-[-100px] right-[-100px]" />
 
-      {/* 🔹 Score Card */}
-      <div className="bg-white p-6 rounded-xl shadow mb-8">
+      <div className="relative z-10 max-w-5xl mx-auto">
 
-        <h2 className="text-xl font-semibold mb-4">
-          ATS Score
-        </h2>
+        {/* 🔹 Header */}
+        <h1 className="text-4xl font-bold mb-10 text-center">
+          Resume Analysis 📊
+        </h1>
 
-        {/* Progress Bar */}
-        <div className="w-full bg-gray-200 rounded-full h-4 mb-4">
-          <div
-            className="bg-green-500 h-4 rounded-full transition-all duration-500"
-            style={{ width: `${score}%` }}
-          ></div>
+        {/* 🔹 Score Card */}
+        <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-8 shadow-xl text-center mb-10">
+
+          <h2 className="text-xl mb-6 text-gray-300">ATS Score</h2>
+
+          {/* Circular Score */}
+          <div className="relative w-40 h-40 mx-auto mb-6">
+            <div className="absolute inset-0 rounded-full border-8 border-gray-700"></div>
+
+            <div
+              className="absolute inset-0 rounded-full border-8 border-purple-500 border-t-transparent animate-spin-slow"
+              style={{ transform: `rotate(${score * 3.6}deg)` }}
+            ></div>
+
+            <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold">
+              {score}%
+            </div>
+          </div>
+
+          <p className="text-gray-400">
+            Your resume is performing {score > 70 ? "well 👍" : "needs improvement ⚠️"}
+          </p>
         </div>
 
-        <p className="text-lg font-bold">
-          {score}% Score
-        </p>
-      </div>
+        {/* 🔹 Skills Section */}
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
 
-      {/* 🔹 Grid */}
-      <div className="grid md:grid-cols-2 gap-6">
+          {/* ✅ Skills Found */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-lg">
+            <h2 className="text-lg font-semibold mb-4 text-green-400">
+              Skills Found
+            </h2>
 
-        {/* ✅ Skills Found */}
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-lg font-semibold mb-4 text-green-600">
-            Skills Found ✅
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill, i) => (
+                <span
+                  key={i}
+                  className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-sm border border-green-500/20"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* ❌ Missing Skills */}
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-lg">
+            <h2 className="text-lg font-semibold mb-4 text-red-400">
+              Missing Skills
+            </h2>
+
+            <div className="flex flex-wrap gap-2">
+              {missingSkills.map((skill, i) => (
+                <span
+                  key={i}
+                  className="bg-red-500/10 text-red-400 px-3 py-1 rounded-full text-sm border border-red-500/20"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* 🔹 Suggestions */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-xl shadow-lg mb-10">
+          <h2 className="text-lg font-semibold mb-4 text-yellow-400">
+            Suggestions 💡
           </h2>
 
-          <div className="flex flex-wrap gap-2">
-            {skills.map((skill, i) => (
-              <span
-                key={i}
-                className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm"
-              >
-                {skill}
-              </span>
+          <ul className="space-y-3 text-gray-300">
+            {suggestions.map((item, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span>👉</span>
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
-        {/* ❌ Missing Skills */}
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-lg font-semibold mb-4 text-red-600">
-            Missing Skills ❌
-          </h2>
+        {/* 🔹 CTA Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
 
-          <div className="flex flex-wrap gap-2">
-            {missingSkills.map((skill, i) => (
-              <span
-                key={i}
-                className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
+          <Link
+            to="/upload"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition shadow-lg"
+          >
+            Re-Upload Resume
+          </Link>
+
+          <Link
+            to="/resume-builder"
+            className="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition"
+          >
+            Improve Resume
+          </Link>
+
         </div>
 
       </div>
-
-      {/* 🔹 Suggestions */}
-      <div className="bg-white p-6 rounded-xl shadow mt-8">
-        <h2 className="text-lg font-semibold mb-4">
-          Suggestions 💡
-        </h2>
-
-        <ul className="list-disc pl-6 space-y-2 text-gray-600">
-          {suggestions.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* 🔹 CTA Buttons */}
-      <div className="flex gap-4 mt-8 flex-wrap">
-
-        <Link
-          to="/upload"
-          className="bg-black text-white px-6 py-2 rounded-lg hover:bg-gray-800"
-        >
-          Re-Upload Resume
-        </Link>
-
-        <Link
-          to="/resume-builder"
-          className="border px-6 py-2 rounded-lg hover:bg-gray-100"
-        >
-          Improve Resume
-        </Link>
-
-      </div>
-
     </div>
   );
 };
