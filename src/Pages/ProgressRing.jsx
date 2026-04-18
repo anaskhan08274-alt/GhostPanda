@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const ProgressRing = ({ score }) => {
   const [progress, setProgress] = useState(0);
 
-  const radius = 70;
+  const radius = 80;
   const stroke = 10;
   const normalizedRadius = radius - stroke / 2;
   const circumference = normalizedRadius * 2 * Math.PI;
@@ -55,7 +55,7 @@ const ProgressRing = ({ score }) => {
       </svg>
 
       {/* Center text */}
-      <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold">
+      <div className="absolute inset-0 flex items-center justify-center text-5xl font-bold">
         {progress}%
       </div>
     </div>
