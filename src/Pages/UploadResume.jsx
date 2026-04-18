@@ -6,6 +6,38 @@ const UploadResume = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // 🔥 Dummy AI Generator
+  const generateDummyData = (fileName) => {
+    const score = Math.floor(Math.random() * 30) + 65;
+
+    const allSkills = [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Node.js",
+      "MongoDB",
+      "TypeScript",
+    ];
+
+    // shuffle skills (random feel)
+    const shuffled = [...allSkills].sort(() => 0.5 - Math.random());
+
+    const skills = shuffled.slice(0, 4);
+    const missingSkills = shuffled.slice(4);
+
+    return {
+      score,
+      skills,
+      missingSkills,
+      suggestions: [
+        "Add measurable achievements",
+        "Improve ATS keywords",
+        "Enhance project descriptions",
+      ],
+    };
+  };
+
   const handleFileChange = (e) => {
     if (e.target.files.length > 0) {
       setFileName(e.target.files[0].name);
@@ -21,8 +53,10 @@ const UploadResume = () => {
     setLoading(true);
 
     setTimeout(() => {
+      const data = generateDummyData(fileName); // 🔥 dynamic data
+
       setLoading(false);
-      navigate("/result");
+      navigate("/result", { state: data });
     }, 2500);
   };
 

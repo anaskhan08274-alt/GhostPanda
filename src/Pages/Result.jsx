@@ -1,16 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import ProgressRing from "./ProgressRing";
 
 const Result = () => {
-  const score = 78;
+  const { state } = useLocation();
 
-  const skills = ["React", "JavaScript", "HTML", "CSS"];
-  const missingSkills = ["Node.js", "MongoDB", "TypeScript"];
+  // ✅ Fallback (agar direct page open ho)
+  if (!state) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#0f172a] text-white">
+        <p>No data found. Please upload resume first.</p>
+      </div>
+    );
+  }
 
-  const suggestions = [
-    "Add action verbs like 'developed', 'built', 'optimized'",
-    "Include measurable achievements (e.g. 30% growth)",
-    "Improve keyword optimization for ATS",
-  ];
+  // ✅ Dynamic data
+  const score = state.score;
+  const skills = state.skills;
+  const missingSkills = state.missingSkills;
+  const suggestions = state.suggestions;
 
   return (
     <div className="relative min-h-screen bg-[#0f172a] text-white p-6 md:p-10 overflow-hidden">
@@ -32,18 +39,7 @@ const Result = () => {
           <h2 className="text-xl mb-6 text-gray-300">ATS Score</h2>
 
           {/* Circular Score */}
-          <div className="relative w-40 h-40 mx-auto mb-6">
-            <div className="absolute inset-0 rounded-full border-8 border-gray-700"></div>
-
-            <div
-              className="absolute inset-0 rounded-full border-8 border-purple-500 border-t-transparent animate-spin-slow"
-              style={{ transform: `rotate(${score * 3.6}deg)` }}
-            ></div>
-
-            <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold">
-              {score}%
-            </div>
-          </div>
+         <ProgressRing score={score} />
 
           <p className="text-gray-400">
             Your resume is performing {score > 70 ? "well 👍" : "needs improvement ⚠️"}
@@ -131,4 +127,4 @@ const Result = () => {
   );
 };
 
-export default Result;
+export default Result;  
