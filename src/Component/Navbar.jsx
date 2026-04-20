@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/logo.jpeg"; // 👈 ADD THIS
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,9 +10,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
-        <h1 className="text-2xl font-bold">
-          GhostPanda 🐼
-        </h1>
+        <div className="flex items-center gap-2">
+          <img
+            src={logo}
+            alt="GhostPanda"
+            className="w-12 h-12 object-contain"
+          />
+          <h1 className="text-2xl font-bold">GhostPanda</h1>
+        </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
